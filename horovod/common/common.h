@@ -45,7 +45,7 @@ using gpuPointerAttribute_t = cudaPointerAttributes;
   do {                                                                                      \
     cudaError_t cuda_result = x;                                                            \
     if (cuda_result != cudaSuccess) {                                                       \
-      throw std::logic_error(std::string("GPU Error:") + cudaGetErrorString(cuda_result));  \
+      std::cout << std::string("GPU Error:") + cudaGetErrorString(cuda_result);  \
     }                                                                                       \
   } while (0)
 #elif HAVE_ROCM
@@ -224,6 +224,7 @@ private:
   Status(StatusType type, std::string reason);
 };
 
+/*
 // Common error status
 const Status NOT_INITIALIZED_ERROR = Status::PreconditionError(
     "Horovod has not been initialized; use hvd.init().");
@@ -239,6 +240,7 @@ const Status DUPLICATE_NAME_ERROR = Status::InvalidArgument(
     "Requested to allreduce, allgather, or broadcast a tensor with the same "
     "name as another tensor that is currently being processed.  If you want "
     "to request another tensor, use a different tensor name.");
+*/
 
 class TensorShape {
 public:
@@ -340,7 +342,7 @@ public:
     if (output_index == 0) {
       return AllocateOutput(std::move(shape), tensor);
     } else {
-      throw std::logic_error("output_index != 0 not supported");
+      //throw std::logic_error("output_index != 0 not supported");
     }
   }
   virtual Status AllocateZeros(int64_t num_elements, DataType dtype,
