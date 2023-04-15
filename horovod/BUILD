@@ -280,7 +280,7 @@ cc_library(
 )
 
 tf_custom_op_library(
-    name = 'tensorflow/mpi_lib.cpython-37m-x86_64-linux-gnu.so',
+    name = 'tensorflow/mpi_lib.so',
     srcs = [
         "tensorflow/mpi_ops.cc",
         #"tensorflow/xla_mpi_ops.cc",
@@ -392,7 +392,7 @@ py_library(
         "tensorflow/__init__.py",
     ],
     data = [
-        ":tensorflow/mpi_lib.cpython-37m-x86_64-linux-gnu.so",
+        ":tensorflow/mpi_lib.so",
     ],
     visibility = ["//visibility:public"],
     deps = [
