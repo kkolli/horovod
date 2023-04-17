@@ -212,7 +212,7 @@ cc_binary(
         "common/nvtx_op_range.h",
         "common/operations.h",
     ],
-    copts = ["-DTENSORFLOW_VERSION=2009000000"],
+    copts = ["-DTENSORFLOW_VERSION=2012000000"],
     deps = [
         "@org_tensorflow//tensorflow/core:framework",
         "@org_tensorflow//tensorflow/core/kernels:resource_variable_ops",
