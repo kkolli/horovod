@@ -232,7 +232,7 @@ tf_custom_op_library(
         "common/operations.h",
     ], 
     copts = [
-        "-DTENSORFLOW_VERSION=2009000000",
+        "-DTENSORFLOW_VERSION=2012000000",
         "-DHOROVOD_GPU_ALLREDUCE=78",
         "-DHOROVOD_GPU_BROADCAST=78",
         "-DHOROVOD_GPU_ALLGATHER=78",
@@ -290,7 +290,7 @@ tf_custom_op_library(
         "common/nvtx_op_range.h",
         "common/operations.h",
     ],
-    copts = ["-DTENSORFLOW_VERSION=2009000000"],
+    copts = ["-DTENSORFLOW_VERSION=2012000000"],
     deps = [
         ":common_ops_cuda",
         ":common_mpi",
