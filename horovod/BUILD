@@ -393,6 +393,7 @@ py_library(
     ],
     data = [
         ":tensorflow/mpi_lib.so",
+        ":common_ops_adasum"
     ],
     visibility = ["//visibility:public"],
     deps = [
